@@ -1,0 +1,17 @@
+Hello World!!
+My name is Gaurav Nikam
+
+
+{
+    "Name": "Gaurav Nikam",
+    "City": "Malegaon",
+    "Email": "gauravpn.a2@gmail.com"
+}
+
+{
+    "Name": "Aniket Tiwari",
+    "City": "Roha",
+    "Email": "anikettiwari@gmail.com"
+}
+
+end of file
