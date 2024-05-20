@@ -96,8 +96,8 @@ int main() {
 					temp = "<h1>Page Not Found</h1>";
 				}
 				response << temp;
-				std::string bufferstring(buffer);
-				returnBody(studentDataVec, bufferstring);
+				
+				
 
 
 				int k = send(acceptSocket, response.str().c_str(), response.str().size(), 0);
@@ -105,6 +105,21 @@ int main() {
 			}
 			else if(method1 == "POST"){
 				std::cout << "Its post method" << std::endl;
+				std::stringstream responce;
+				responce << "HTTP/1.1 200 OK\r\n";
+				responce <<"Content-Type: text/plain\r\n\r\n";
+				std::string bufferstring(buffer);
+				returnBody(studentDataVec, bufferstring);
+
+				for(auto i: studentDataVec)
+				{
+					responce << "Name = "<<i.name<<std::endl;
+					responce << "City = "<<i.city<<std::endl;
+					responce << "Email = "<<i.email<<std::endl<<std::endl;
+				}
+
+				int k = send(acceptSocket, responce.str().c_str(), responce.str().size(), 0);
+				close(acceptSocket);
 			}
 		}
 		
