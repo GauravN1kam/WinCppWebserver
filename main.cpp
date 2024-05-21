@@ -8,9 +8,9 @@
 #include <netinet/in.h>
 #include <fcntl.h>
 #include<unistd.h>
-#include "FileHandling.h"
-#include "routes.h"
-#include "HTML_Parser.h"
+#include "./include/FileHandling.h"
+#include "./include/routes.h"
+#include "./include/HTML_Parser.h"
 
 int main() {
 
@@ -40,8 +40,8 @@ int main() {
 
 	std::map<std::string, std::string> Routes;
 
-	addRoute(Routes, "/", "index.html");
-	addRoute(Routes, "/about", "about.html");
+	addRoute(Routes, "/", "./view/index.html");
+	addRoute(Routes, "/about", "./view/about.html");
 
 	int acceptSocket;
 	while (1)
