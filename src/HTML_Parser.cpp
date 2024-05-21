@@ -1,4 +1,4 @@
-#include "HTML_Parser.h"
+#include "../include/HTML_Parser.h"
 
 void HTMLToString(std::string filename, std::string& res) {
 	std::fstream file;
